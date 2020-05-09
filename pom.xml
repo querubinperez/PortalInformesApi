@@ -17,10 +17,24 @@
 
     <!-- Listado de dependencias -->
     <dependencies>
+
+        <!-- Framework de Spring para interconexión a persistencia -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
         <!-- Dependencia asociada de Spring para servicio REST -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- Manejo de persistencia mediante Base de Datos Postgressql -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
         </dependency>
 
         <!-- Dependencia correspondiente al manejo de pruebas -->

@@ -1,22 +1,30 @@
 package co.edu.udea.portalinformes.api.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "planos")
 public class Plano {
-    private Integer planoID;
-    private String dataPlano;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
 
-    public String getDataPlano() {
-        return dataPlano;
+    @Column(name = "dataPlano")
+    private String data_plano;
+
+    public Integer getId() {
+        return id;
     }
 
-    public void setDataPlano(String dataPlano) {
-        this.dataPlano = dataPlano;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public Integer getPlanoID() {
-        return planoID;
+    public String getData_plano() {
+        return data_plano;
     }
 
-    public void setPlanoID(Integer planoID) {
-        this.planoID = planoID;
+    public void setData_plano(String data_plano) {
+        this.data_plano = data_plano;
     }
 }
