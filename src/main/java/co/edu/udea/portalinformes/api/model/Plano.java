@@ -9,8 +9,16 @@ public class Plano {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @Column(name = "dataPlano")
+    @Column(name = "dataPlano", columnDefinition = "TEXT")
     private String data_plano;
+
+    public Plano() {
+    }
+
+    public Plano(Integer id, String data_plano) {
+        this.id = id;
+        this.data_plano = data_plano;
+    }
 
     public Integer getId() {
         return id;

@@ -26,6 +26,7 @@ public class PlanoService implements PlanoServiceInt {
 
     @Override
     public Plano addPlano(Plano plano) {
+        System.out.println("se recibe para add: \n" + plano.getData_plano());
         return planoRepository.save(plano);
     }
 
@@ -46,6 +47,7 @@ public class PlanoService implements PlanoServiceInt {
 
     @Override
     public List<Sismed> cargarPlano(Plano plano) throws ParseException {
+        System.out.println("se recibe: \n" + plano.getData_plano());
         List<Sismed> informe = new ArrayList<Sismed>();
         String[] lines = plano.getData_plano().split("\\s*\\r?\\n\\s*");
         int cont = 1;
@@ -54,7 +56,7 @@ public class PlanoService implements PlanoServiceInt {
         SimpleDateFormat formatter = new SimpleDateFormat("ddMMyyyyhhmmss");
         String idRandom = formatter.format(date);
         for (String line : lines) {
-            System.out.println(line);
+            System.out.println("Linea" + cont + ": " + line);
             String[] campos = line.split(Pattern.quote("|"));
             Sismed sismed = new Sismed(idRandom, cont,
                     Integer.parseInt(campos[0]), campos[1], campos[2], Integer.parseInt(campos[3]),
